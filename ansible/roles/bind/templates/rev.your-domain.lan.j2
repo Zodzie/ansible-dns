@@ -1,0 +1,17 @@
+$TTL 86400
+@   IN  SOA     pri.your-domain.lan. root.your-domain.lan. (
+        2011071002  ;Serial
+        3600        ;Refresh
+        1800        ;Retry
+        604800      ;Expire
+        86400       ;Minimum TTL
+)
+@       IN  NS          pri.your-domain.lan.
+@       IN  NS          sec.your-domain.lan.
+@       IN  PTR         your-domain.lan.
+pri     IN  A           192.168.1.200
+sec     IN  A           192.168.1.201
+client  IN  A           192.168.1.202
+200     IN  PTR         pri.your-domain.lan.
+201     IN  PTR         sec.your-domain.lan.
+202     IN  PTR         client.your-domain.lan.

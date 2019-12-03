@@ -1,0 +1,10 @@
+zone "your-domain.lan" {
+        type slave;
+        file "/var/cache/bind/for.your-domain.lan";
+        masters { 192.168.5.200; };
+ };
+zone "1.168.192.in-addr.arpa" {
+        type slave;
+        file "/var/cache/bind/rev.your-domain.lan";
+        masters { 192.168.5.200; };
+ };

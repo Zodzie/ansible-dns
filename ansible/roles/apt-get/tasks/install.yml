@@ -1,0 +1,6 @@
+- name: Install bind packages
+  apt:
+    pkg:
+    - bind9
+    - bind9utils
+    - bind9-doc

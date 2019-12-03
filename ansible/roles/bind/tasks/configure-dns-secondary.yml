@@ -1,0 +1,15 @@
+- name: template named.conf
+  template:
+    src: "named.conf.j2"
+    dest: /etc/bind/named.conf
+    backup: yes
+
+- name: setting up forward and reverse files
+  template:
+    src: "named.conf.local-2.j2"
+    dest: /etc/bind/named.conf.local
+    backup: yes
+
+- service:
+    name: bind9
+    state: restarted

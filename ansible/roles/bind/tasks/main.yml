@@ -1,0 +1,11 @@
+- name: deploy caching-only nameserver configs 
+  import_tasks: configure-caching.yml
+  when: (action == "configure") or (action == "configure-caching")
+
+- name: deploy primary dns server configs
+  import_tasks: configure-dns.yml
+  when: (action == "configure") or(action == "configure-dns-primary")
+
+- name: deploy secondary dns server configs
+  import_tasks: configure-dns-secondary.yml
+  when: (action == "configure") or(action == "configure-dns-secondary")
